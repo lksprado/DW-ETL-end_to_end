@@ -1,0 +1,8 @@
+.venv
+.env
+logs/
+commodities_dw/analyses
+commodities_dw/macros
+commodities_dw/snapshots
+commodities_dw/tests
+commodities_dw/seeds

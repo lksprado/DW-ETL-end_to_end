@@ -1,0 +1,1 @@
+{"_invocation_id": "9d382e36-77e2-4ea5-b916-18a884df5f24", "linked": {"0": {"name": "source.commodities_dw.postgres.commodities", "type": "source", "succ": [1]}, "1": {"name": "model.commodities_dw.stg_commodities", "type": "model"}}}
