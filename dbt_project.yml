@@ -17,6 +17,7 @@ test-paths: ["commodities_dw/tests"]
 seed-paths: ["commodities_dw/seeds"]
 macro-paths: ["commodities_dw/macros"]
 snapshot-paths: ["commodities_dw/snapshots"]
+docs-paths: ["docs"]
 
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
