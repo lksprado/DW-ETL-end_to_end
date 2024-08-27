@@ -12,11 +12,11 @@ profile: 'commodities_dw'
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["commodities_dw/models"]
-analysis-paths: ["analyses"]
-test-paths: ["tests"]
-seed-paths: ["seeds"]
-macro-paths: ["macros"]
-snapshot-paths: ["snapshots"]
+analysis-paths: ["commodities_dw/analyses"]
+test-paths: ["commodities_dw/tests"]
+seed-paths: ["commodities_dw/seeds"]
+macro-paths: ["commodities_dw/macros"]
+snapshot-paths: ["commodities_dw/snapshots"]
 
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
@@ -28,4 +28,25 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   commodities_dw:
-    +materialized: table
+    # Configurations for models in the staging folder
+    staging:
+      +schema: staging
+      +materialized: view
+
+      stg_commodities:
+        enabled: true
+
+      stg_commodities_trade:
+        enabled: true
+      +docs:
+        node_color: "#c0c0c0"  # Cor prata
+
+    # Configurations for models in the datamart folder
+    datamart:
+      +schema: datamart
+      +materialized: view
+      +docs:
+        node_color: "#e6b530"  # Cor gold
+
+      dm_commodities:
+        enabled: true

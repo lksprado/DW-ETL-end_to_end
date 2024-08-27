@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: postgres
+    schema: public
+    tables:
+      - name: commodities
+        description: "Tabela que contém dados históricos de commodities"
+        columns:
+          - name: Date
+            description: "Data da observação"
+          - name: Close
+            description: "Preço de fechamento da commodity"
+          - name: ticker
+            description: "Símbolo da commodity"
+      - name: commodities_trade
+        description: "Tabela seed"
+        columns:
+          - name: data
+            description: "Data da transação"
+          - name: ticker_code
+            description: "Código do ativo"
+          - name: action
+            description: "Tipo de transação (buy/sell)"
+          - name: quantity
+            description: "Quantidade transacionada"

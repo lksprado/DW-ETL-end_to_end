@@ -1,13 +1,8 @@
 
-  
+  create view "postgres"."public_staging"."stg_commodities__dbt_tmp"
     
-
-  create  table "postgres"."public"."stg_commodities__dbt_tmp"
-  
-  
-    as
-  
-  (
+    
+  as (
     -- IMPORT
 with source as (
     select 
@@ -30,4 +25,3 @@ renamed as (
 
 select * from renamed
   );
-  
